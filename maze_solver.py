@@ -64,7 +64,7 @@ class Maze():
         for r in range(self.height):
             for c in range(self.width):
                 try:
-                    if self.contents[r][c] == " " and solution and (r,c) in solution: print("*", end='')
+                    if self.contents[r][c] == " " and solution and (r,c) in solution: print("@", end='')
                     else: print(self.contents[r][c], end="")
                 except IndexError: pass 
             print()
