@@ -55,7 +55,8 @@ The maze file should contain a grid of characters representing the maze layout. 
 Ensure that the maze contains exactly one starting point ('A') and one ending point ('B').
 
 ## Demo Run
-![image](https://github.com/AdityaDwivediAtGit/MazeSolver/assets/107645490/9d6f76d2-6a97-481d-b039-badb10bcb4fe)
+![image](https://github.com/AdityaDwivediAtGit/MazeSolver/assets/107645490/ceab01b9-e567-40ef-906a-56446ef7f188)
+
 
 
 The image above shows a demo run of the maze-solving algorithm in action.
