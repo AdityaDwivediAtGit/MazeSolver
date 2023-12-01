@@ -54,6 +54,12 @@ The maze file should contain a grid of characters representing the maze layout. 
 
 Ensure that the maze contains exactly one starting point ('A') and one ending point ('B').
 
+## Demo Run
+![image](https://github.com/AdityaDwivediAtGit/MazeSolver/assets/107645490/9d6f76d2-6a97-481d-b039-badb10bcb4fe)
+
+
+The image above shows a demo run of the maze-solving algorithm in action.
+
 ## Dependencies
 
 The project does not have any external dependencies beyond the Python standard library.
