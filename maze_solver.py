@@ -26,8 +26,10 @@ class FrontierQueue(FrontierStack): # just inherit everything from FrontierStack
 
 
 class Maze():
-    def __init__(self, filename, algo="DFS"):
+    def __init__(self, filename, algo="DFS", debug=False):
         self.algo = algo
+        self.debug = debug
+
         with open(filename) as f: contents = f.read()
 
         if contents.count("A") != 1: raise Exception("Error: Multiple or No Starting Point")
@@ -95,7 +97,7 @@ class Maze():
             if frontier.isEmpty(): raise Exception("No Solution")
             
             node = frontier.popNode()
-            print("\t\tNode Popped", node.state)
+            if self.debug: print("\t\tNode Popped", node.state)
             self.countExploredNodes += 1
 
             # if we found a solution, retrace the path and save the solution
@@ -119,15 +121,15 @@ class Maze():
                 if not frontier.containsState(state) and state not in self.exploredStates:
                     childNode = Node(state=state, parent=node, action=action)
                     frontier.addNode(childNode)
-                    print("\t Added Child to frontier", childNode.state)#################################
+                    if self.debug: print("\t Added Child to frontier", childNode.state)
 
 import sys
 if __name__ == "__main__":
     if len(sys.argv) == 2: 
-        m = Maze(sys.argv[1])
+        m = Maze(filename = sys.argv[1], debug = False)
         print("Usage: python maze_solver.py file.maze algo \n Algorithm not specified! Default Selected: DFS \n\n Supported Algos: BFS, DFS\n\n") 
     elif len(sys.argv) != 3: raise Exception("Usage: python maze_solver.py file.maze algo")
-    else: m = Maze(sys.argv[1], sys.argv[2])
+    else: m = Maze(filename = sys.argv[1], algo = sys.argv[2], debug = False)
 
     print("1.\t Input Maze:")
     m.printMaze()
